@@ -1,21 +1,32 @@
+import java.sql.SQLOutput;
+
 public class Main{
     public static void main(String[] args) throws InterruptedException {
-        Personagem personagem1 = new Personagem();
+        Personagem heroi = new Personagem("Rafael", 30, 16);
+        Personagem inimgo = new Personagem("Hydra", 20, 8);
 
-        personagem1.nome = "Rafael";
-        personagem1.vida = 25;
-        personagem1.ataque = 16;
+        System.out.println("SISTEMA DE RPG SIMPLES COMEÇANDO!!");
+        heroi.quebraDeLinha();
 
-        personagem1.exibirStatus();
-        personagem1.quebraDeLinha();
-        personagem1.atacar("Hydra", 10);
-        personagem1.quebraDeLinha();
-        personagem1.tomarDano(20,"Hydra");
-        personagem1.quebraDeLinha();
-        personagem1.exibirStatus();
-        personagem1.quebraDeLinha();
-        personagem1.tomarDano(5, "Hydra");
+        while(heroi.estarVivo() && inimgo.estarVivo()){
+            System.out.println("Rafael está atacando...");
+            Thread.sleep(1500);
+            heroi.atacar(inimgo);
+            Thread.sleep(1500);
+            System.out.println("Hydra está atacando...");
+            Thread.sleep(1500);
+            inimgo.atacar(heroi);
+            Thread.sleep(1500);
+        }
 
+        heroi.quebraDeLinha();
+        heroi.exibirStatus();
 
+        if(inimgo.vida <= 0){
+            System.out.println("Vencedor Rafael!");
+        }
+        else{
+            System.out.println("Vencedor Hydra");
+        }
     }
 }
