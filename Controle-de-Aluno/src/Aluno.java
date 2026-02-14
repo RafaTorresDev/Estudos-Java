@@ -32,7 +32,6 @@ public class Aluno {
         else{
             System.out.println("erro");
         }
-
     }
     public void atualizarNota2(double novaNota){
         if(novaNota >= 0 && novaNota <= 10 ){
@@ -41,7 +40,6 @@ public class Aluno {
         else{
             System.out.println("erro");
         }
-
     }
     public void exibirStatus(){
         System.out.printf("Aluno: %s\nNota 1: %.2f\nNota 2: %.2f\n", nome, nota1, nota2);
@@ -51,10 +49,5 @@ public class Aluno {
         else {
             System.out.println("Reprovado");
         }
-
     }
-
-
-
-
 }
