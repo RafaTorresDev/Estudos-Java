@@ -10,7 +10,7 @@ public class Main{
         System.out.println("CALCULADORA IMC" );
         System.out.println("===============");
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         System.out.println("Escreva sua altura (m): ");
         double altura = sc.nextDouble();
